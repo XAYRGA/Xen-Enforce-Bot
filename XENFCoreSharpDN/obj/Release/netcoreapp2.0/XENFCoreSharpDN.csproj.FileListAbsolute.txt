@@ -1,0 +1,11 @@
+c:\users\u415001\source\repos\XENFCoreSharpDN\XENFCoreSharpDN\bin\Release\netcoreapp2.0\XENFCoreSharpDN.deps.json
+c:\users\u415001\source\repos\XENFCoreSharpDN\XENFCoreSharpDN\bin\Release\netcoreapp2.0\XENFCoreSharpDN.runtimeconfig.json
+c:\users\u415001\source\repos\XENFCoreSharpDN\XENFCoreSharpDN\bin\Release\netcoreapp2.0\XENFCoreSharpDN.runtimeconfig.dev.json
+c:\users\u415001\source\repos\XENFCoreSharpDN\XENFCoreSharpDN\bin\Release\netcoreapp2.0\XENFCoreSharpDN.dll
+c:\users\u415001\source\repos\XENFCoreSharpDN\XENFCoreSharpDN\bin\Release\netcoreapp2.0\XENFCoreSharpDN.pdb
+c:\users\u415001\source\repos\XENFCoreSharpDN\XENFCoreSharpDN\obj\Release\netcoreapp2.0\XENFCoreSharpDN.csproj.CoreCompileInputs.cache
+c:\users\u415001\source\repos\XENFCoreSharpDN\XENFCoreSharpDN\obj\Release\netcoreapp2.0\XENFCoreSharpDN.AssemblyInfoInputs.cache
+c:\users\u415001\source\repos\XENFCoreSharpDN\XENFCoreSharpDN\obj\Release\netcoreapp2.0\XENFCoreSharpDN.AssemblyInfo.cs
+c:\users\u415001\source\repos\XENFCoreSharpDN\XENFCoreSharpDN\obj\Release\netcoreapp2.0\XENFCoreSharpDN.dll
+c:\users\u415001\source\repos\XENFCoreSharpDN\XENFCoreSharpDN\obj\Release\netcoreapp2.0\XENFCoreSharpDN.pdb
+c:\users\u415001\source\repos\XENFCoreSharpDN\XENFCoreSharpDN\obj\Release\netcoreapp2.0\XENFCoreSharpDN.csprojAssemblyReference.cache
