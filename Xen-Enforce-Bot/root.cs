@@ -29,6 +29,8 @@ namespace XenfbotDN
                 Console.WriteLine("parameter check.....");
             }
 
+            Localization.init();
+
             /// Load Config File
             Helpers.writeOut(tag, "Initializing configuration.");
             Config.init("config.ini");
@@ -87,9 +89,10 @@ namespace XenfbotDN
             LuaState.DoString("print(GroupConfiguration)");
             LuaState.DoString("dofile('xen/init.lua')");
      
-            callHook = (LuaFunction)LuaState["modhook.Call"]; 
+            callHook = (LuaFunction)LuaState["modhook.Call"];
 
-            
+
+            botRoot.Enter();
         }
     }
 }

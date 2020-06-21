@@ -2,7 +2,7 @@ CODE	en
 AUTHOR	@XAYRGA
 VERSION	1.0
 *******************************************************
-#the *'s after the banner are mandatory.
+
 
 #THIS IS SPECIFIC TO THE LANGUAGE
 locale/languageChanged|The language has successfully been changed to English.
@@ -54,6 +54,5 @@ autorem/sorry|Hey %s, sorry for kicking you. Your profile looks a lot like a bot
 muvfilt/warning|You will not be able to send messages until you've verified. 
 movfilt/manual|%s has been manually unmuted by Xen Enforce Bot.
 
-#FURRYMODE / COMMONNAME
 furrymode/rem|%s was removed because their name is that of a common bot. 
 

@@ -27,15 +27,21 @@ namespace XenfbotDN
             }           
         }
 
-        public static void doNotify(long user, long mid, long groupID)
+        public static void doNotify(long user, long mid, long groupID, GroupConfigurationObject GCO)
         {
             SQL.Query($"UPDATE `verify` SET notified=TRUE WHERE `user`={user} AND `group`={groupID}");
         
         }
 
-        public static void doVerify(long user, long mid, long groupID)
+        public static void doVerify(long user, long mid, long groupID, GroupConfigurationObject GCO)
         {
             SQL.Query($"UPDATE `verify` SET verified=TRUE WHERE `user`={user} AND `group`={groupID}");
+            root.callHook.Call("UserVerified",user, mid, groupID,GCO);
+        }
+
+        public static void doRemoval(long user, long mid, long groupID, GroupConfigurationObject GCO)
+        {
+
         }
 
     }

@@ -290,7 +290,7 @@ namespace XenfbotDN
             
             var fullPath = string.Format(APIPath, APIKey);
             var endpoint = fullPath + req;
-            Console.WriteLine(endpoint);
+        
             using (WebClient client = new WebClient())
             {
                 try

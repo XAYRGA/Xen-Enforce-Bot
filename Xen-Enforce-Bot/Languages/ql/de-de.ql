@@ -2,11 +2,12 @@ CODE	de
 AUTHOR	@Ninoeri
 VERSION	1.0
 *******************************************************
-#the *'s after the banner are mandatory.
+
 
 #THIS IS SPECIFIC TO THE LANGUAGE
 locale/languageChanged|Die Spracheinstellung wurde erfolgreich auf Deutsch gestellt.
 locale/currentLang|Die derzeitige sprache ist 'Deutsch'
+locale/currentLangName|Deutsch
 locale/sentence|Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
 
 
@@ -36,5 +37,4 @@ autorem/sorry|Hey %s, entschuldige das kicken aus dem Chat. Dein Profil sieht de
 muvfilt/warning|Du kannst keine Nachrichten versenden bis du verifiziert wurdest. 
 movfilt/manual|%s wurde manuell von Xen Enforce Bot entmuted.
 
-#FURRYMODE / COMMONNAME
 furrymode/rem|Der Benutzer %s wurde entfernt, da sein Name dem eines Bots gleicht. 
