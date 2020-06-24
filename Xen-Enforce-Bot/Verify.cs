@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace XenfbotDN
 {
@@ -27,21 +28,39 @@ namespace XenfbotDN
             }           
         }
 
+        public static void addInstance(TGUser user, TGChat chat,TGMessage assoc_message, GroupConfigurationObject GCO,string challenge_data)
+        {
+            int ra = 0;
+            int messageID = 0;
+            
+            SQL.NonQuery($"INSERT INTO `verify` (`user`,`group`,`challenge`", out ra);
+        }
+
+        public static void isVerified(TGUser user, TGChat chat, TGMessage assoc_message, GroupConfigurationObject GCO, string challenge_data)
+        {
+            int ra = 0;
+            int messageID = 0;
+            SQL.NonQuery($"INSERT INTO `verify` (`user`,`group`,`challenge`", out ra);
+        }
+
         public static void doNotify(long user, long mid, long groupID, GroupConfigurationObject GCO)
         {
-            SQL.Query($"UPDATE `verify` SET notified=TRUE WHERE `user`={user} AND `group`={groupID}");
+            int ra = 0;
+            SQL.NonQuery($"UPDATE `verify` SET notified=TRUE WHERE `user`={user} AND `group`={groupID}", out ra);
         
         }
 
         public static void doVerify(long user, long mid, long groupID, GroupConfigurationObject GCO)
         {
-            SQL.Query($"UPDATE `verify` SET verified=TRUE WHERE `user`={user} AND `group`={groupID}");
+            int ra = 0;
+            SQL.NonQuery($"UPDATE `verify` SET verified=TRUE WHERE `user`={user} AND `group`={groupID}", out ra);
             root.callHook.Call("UserVerified",user, mid, groupID,GCO);
         }
 
         public static void doRemoval(long user, long mid, long groupID, GroupConfigurationObject GCO)
         {
 
+            Removals.addIncident(new TGUser() { id = user }, new TGChat { id = groupID }, "VERIFYEXPIRE");
         }
 
     }

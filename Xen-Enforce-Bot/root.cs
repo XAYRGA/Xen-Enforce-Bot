@@ -83,12 +83,13 @@ namespace XenfbotDN
             /// Setup Lua State 
             LuaState = new Lua();
             LuaState.LoadCLRPackage(); // Initialize CLR for lua state 
+            LStateLibaries.File.Setup(LuaState);
             LuaState.DoString("dofile('xen/preinit.lua')");
             LuaState.DoString("import('XenfbotDN','XenfbotDN')"); // Import xenfbot namespace
             LuaState.DoString("print(Telegram)");
             LuaState.DoString("print(GroupConfiguration)");
             LuaState.DoString("dofile('xen/init.lua')");
-     
+            LuaState.DoString("dofile('xen/hooktest.lua')");
             callHook = (LuaFunction)LuaState["modhook.Call"];
 
 

@@ -45,7 +45,6 @@ namespace XenfbotDN
                         processIndividualUpdate(currentUpdate);
                     }
                 }
-            
             }
         }
 
@@ -63,7 +62,6 @@ namespace XenfbotDN
                 {
                     if (ncm[i].username == root.botUsername)
                     {
-
                         var cl1 = Localization.getLanguageInfo(langcode);
                         var cl = Localization.getStringLocalized(langcode, "locale/currentLangName");
                         var smsg = Localization.getStringLocalized(langcode, "basic/xenfbot", "4.0.0.1", cl, cl1.authors, cl1.version,"@xayrga");

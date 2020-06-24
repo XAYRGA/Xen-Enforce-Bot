@@ -1,0 +1,5 @@
+modhook.Add("OnMessage","Test",function(gc,msg)
+	print(gc)
+	print(msg)
+	--msg:replySendMessage("Update from Lua State!\n" .. debug.traceback() )
+end)
