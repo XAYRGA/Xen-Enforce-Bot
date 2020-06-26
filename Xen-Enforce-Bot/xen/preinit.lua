@@ -30,3 +30,15 @@ function modhook.Remove(hk,uname)
 	if not hooktab[hk] then hooktab[hk] = {} end
 	hooktab[hk][uname] = nil 
 end
+
+function string.explode(inputstr, sep)
+        if sep == nil then --// check for separator 
+                sep = "%s" --// if we don't have the separator assume we're looking for %s 
+        end 
+        local t={} ; i=1 --// storage table and index 
+        for str in string.gmatch(inputstr, "([^"..sep.."]+)") do --// match regex pattern 
+                t[i] = str --// store in set index on find 
+                i = i + 1 --// Increment
+        end
+        return t
+end

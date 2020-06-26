@@ -29,6 +29,7 @@ namespace XenfbotDN
             for (int i = 0; i < w.Length; i++)
             {
                 var lng = loadQL(w[i]);
+                Console.WriteLine($"LANGQL1 {lng.code}");
                 languages[lng.code] = lng;
             }
         }
@@ -39,11 +40,21 @@ namespace XenfbotDN
             languages.TryGetValue(langcode, out dl);
             return dl;
         }
+
+        public static bool supports(string langcode)
+        {
+            Language dl = null;
+            languages.TryGetValue(langcode, out dl);
+            return dl != null;
+        }
+
         public static string getStringLocalized(string langcode, string path, params object[] fmtdata)
         {
             Language dl = languages["en"];
             Language dlEnglish = dl; 
             languages.TryGetValue(langcode, out dl);
+            if (dl == null)
+                dl = dlEnglish;
 
             string LocString = null;
             dl.data.TryGetValue(path, out LocString);

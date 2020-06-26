@@ -89,7 +89,7 @@ namespace XenfbotDN
             LuaState.DoString("print(Telegram)");
             LuaState.DoString("print(GroupConfiguration)");
             LuaState.DoString("dofile('xen/init.lua')");
-            LuaState.DoString("dofile('xen/hooktest.lua')");
+            //LuaState.DoString("dofile('xen/hooktest.lua')");
             callHook = (LuaFunction)LuaState["modhook.Call"];
 
 

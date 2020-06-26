@@ -53,6 +53,7 @@ namespace XenfbotDN.LStateLibaries
 
         public static void Setup(Lua state)
         {
+            State = state;
             state.DoString(" file = {}");
             state.RegisterFunction("file.Read", null, typeof(File).GetMethod("Read"));
             state.RegisterFunction("file.Exists", null, typeof(File).GetMethod("Exists"));

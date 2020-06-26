@@ -14,7 +14,7 @@ namespace XenfbotDN
             while (true)
             {
                 processUpdates();
-                Thread.Sleep(1000);
+                Thread.Sleep(200);
                 Verify.runTask();
                 Cleanup.runTask();
             }
@@ -24,6 +24,11 @@ namespace XenfbotDN
         public static void processUpdates()
         {
             var up = Telegram.getUpdates(lastUpdate);
+            if (up == null)
+            {
+                Console.WriteLine("TGAPI Response failure update==null");
+                return;
+            }
             Console.WriteLine("Updates: {0}", up.Length);
 
             for (int i = 0; i < up.Length; i++)
@@ -53,7 +58,8 @@ namespace XenfbotDN
             var msg = update.message;
             var langcode = "en"; // default language is englsh
             var gc = GroupConfiguration.getConfig(update.message.chat.id);
-
+            var VFD = Verify.getVerifyData(update.message.from, update.message.chat, update.message);
+            var doubt = Verify.checkDoubt(update.message.from, update.message.chat);
             // Do captcha
             if (msg.new_chat_members != null)
             {
@@ -70,13 +76,13 @@ namespace XenfbotDN
 
                         msg.replySendMessage(smsg);
                     }
-                    root.callHook.Call("NewChatMember", gc, msg);
+                    root.callHook.Call("NewChatMember", gc, msg, VFD, doubt);
                 }
             }
 
             if (msg.text != null)
             {
-                root.callHook.Call("OnMessage",gc,msg);
+                root.callHook.Call("OnTextMessage",gc,msg, VFD, doubt);
             }
 
         }

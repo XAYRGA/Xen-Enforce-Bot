@@ -24,7 +24,10 @@ namespace XenfbotDN
 
                     if ((int)dr["when"] + (int)dr["life"] < Helpers.getUnixTime())
                     {
-                        Telegram.deleteMessage(new TGChat() { id = (long)dr["id"] }, (long)dr["mid"]);
+                        Telegram.deleteMessage(new TGChat() { id = (long)dr["group"] }, (long)dr["mid"]);
+                        var qry = $"DELETE FROM `cleanup` WHERE `uid`={(long)dr["uid"]}";
+                        int ra = 0;
+                        SQL.NonQuery(qry, out ra);
                     }
                 }
             }

@@ -1,2 +1,4 @@
 print("Xenfbot 4.0 Ready!")
-dofile("filter.lua")
+
+dofile("./xen/commands.lua")
+dofile("./xen/filtersystem.lua")

@@ -30,7 +30,6 @@ namespace XenfbotDN
             database = db1;
             cstring = string.Format("server={0};user={1};database={2};port=3306;password={3}", host, username, database, password);
             return true;
-
         }
 
         public static string escape(string esc)

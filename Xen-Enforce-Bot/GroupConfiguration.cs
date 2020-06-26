@@ -43,7 +43,7 @@ namespace XenfbotDN
                 return ret;
             }
             var ra = 0;
-            ok = SQL.NonQuery($"INSERT INTO `configs`(groupid) VALUES({group})", out ra);
+            ok = SQL.NonQuery($"INSERT INTO `configs` (groupid,language) VALUES({group},'en')", out ra);
 
             return new GroupConfigurationObject(group);
         }
@@ -59,7 +59,6 @@ namespace XenfbotDN
         {
             groupID = Gid; 
             data = qData;
-
         }
         public GroupConfigurationObject(long Gid) 
         {

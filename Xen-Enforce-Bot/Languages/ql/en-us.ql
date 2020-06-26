@@ -1,6 +1,6 @@
 CODE	en
 AUTHOR	@XAYRGA
-VERSION	1.0
+VERSION	1.1
 *******************************************************
 
 
@@ -9,6 +9,11 @@ locale/languageChanged|The language has successfully been changed to English.
 locale/currentLang|The current language is 'English'
 locale/currentLangName|English
 locale/sentence|The quick brown fox jumps over the lazy dog. 
+
+#VERIFY 
+verify/userVerified|{0} has successfully completed verification. 
+verify/userKicked|{0} was removed from the chat because they failed to verify.
+verify/userKickedDoubt| {0} was removed from the chat -- if they're not a bot, they can rejoin in two minutes. 
 
 #INFO 
 info/github|http://github.com/XAYRGA/xenfbotdn
@@ -21,23 +26,21 @@ basic/xenfbot|Xen Enforce Bot v{0} by http://github.com/XAYRGA/xenfbotdn\n\nRunn
 basic/words/admin|Administrator
 basic/words/manual|Manual
 basic/commands/noPermission|Sorry, you don't have permission to perform that action. 
-basic/commands/notFound|The command '%s' wasn't found. 
 basic/commands/ok|Command completed successfully. 
 basic/commands/commandError|I ran into an error running this command, please report this with the following tag: {0}
-basic/config/success|Successfully changed {0} to {1}
-basic/config/dontUnderstandNumber|I couldn't understand the value {0}, it should be a number.
-basic/config/somethingWrong|For some reason, I couldn't save the configuration. Contact my developer.
 
-#CONFIGURATION ATTRIBUTE DESCRIPTIONS
-basic/commands/config/availableCommands|The available configuration attributes are:
-basic/commands/config/kickTime|<number minutes> # Configures the amount of time someone has to finish the CAPTCHA. 
-basic/commands/config/useNameFilter|<true/false enable> # Enables or disable Xen Enforce Bot's built-in name filter. This will filter out bots with common names. 
-basic/commands/config/useBotScreen|<true/false enable> # Enables or disables filtering based on profile completeness 
-basic/commands/config/kickMediaBeforeCaptcha|<true/false enable> # Enables or disables the media kick filter. When enabled users will be kicked for posting pictures or links before verifying the captcha. 
-basic/commands/config/muteUntilVerified|<true/false enable> # Enables or disables the automute function. This will mute users when they join the chat, then unmute them when they complete the captcha. 
-basic/commands/config/announceKicks|<true/false enable> # Enables or disables the announcement of kicks and other administrative removal messages.
-basic/commands/config/message|<text message> # Changes the welcome message. Use 'NO' to clear custom message. The message __MUST__ contain %WHO and %LINK ! (Who is replaced by the user, and Link is replaced by the URL for the captcha. %DUR will also be replaced with the amount of time they have to verify)  
-basic/commands/config/activationMessage|<text message> # Changes the verification message, optionally, you can use %WHO for the person it's talking to. 
+#CONFIG
+config/success|Successfully changed {0} to {1}
+config/dontUnderstandNumber|I couldn't understand the value {0}, it should be a number.
+config/somethingWrong|For some reason, I couldn't save the configuration. Contact my developer.
+config/featureDisabled|Successfully disabled the feature '{0}'.
+config/featureEnabled|Successfully enabled the feature '{0}'.
+config/featureNotExist|The feature '{0}' doesn't exist.
+config/languageNotSupported|Sorry, I don't support the language '{0}' yet.
+
+#FEATURES 
+feature/attackOn|Attack mode ENABLED. No new members will be accepted. 
+feature/attackOff|Attack mode DISABLED. New joins will no longer be kicked. 
 
 #CAPTCHA 
 captcha/captcha|CAPTCHA
