@@ -11,7 +11,7 @@ function FILTER:NewUser(user, chat, message, config, verifyData, doubt)
 		--print("Filter not enabled???")
 		return false 
 	end
-	local icons = getNumProfilePhotos(user)
+	local icons = Telegram.getNumProfilePhotos(user)
 	if (icons==nil) then 
 		return -- possibly bad
 	end

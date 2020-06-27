@@ -84,6 +84,7 @@ namespace XenfbotDN
             {
                 root.callHook.Call("OnTextMessage",gc,msg, VFD, doubt);
             }
+            root.callHook.Call("OnRawMessage", gc, msg, VFD, doubt);
         }
 
 

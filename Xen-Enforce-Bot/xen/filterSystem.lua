@@ -54,3 +54,16 @@ function FilterSys.OnMessage(gc, msg, VFD, doubt)
 	end 
 end 
 modhook.Add("OnTextMessage","Filter",FilterSys.OnMessage)
+
+
+function FilterSys.OnRawMessage(gc, msg, VFD, doubt)  
+	for pos,flt in pairs(FilterSys.Entries) do   
+		if flt.OnRawMessage then 
+			local res,data = flt:OnRawMessage(msg.from,msg.chat,msg,gc,VFD,doubt)
+			if (res==true) then 
+				return
+			end 
+		end
+	end 
+end 
+modhook.Add("OnRawMessage","Filter",FilterSys.OnRawMessage)

@@ -45,6 +45,7 @@ feature/attackMode/userKicked|{0} was removed from the chat -- attack mode is en
 
 feature/kickNoIcons/userKicked|{0} was removed from the chat as they don't have any icons and 'kicknoicons' is turned on.
 feature/kickNoHandle/userKicked|{0} was removed from the chat as they don't have a handle/username and 'kicknohandle' is turned on.
+feature/kickEarlyMedia/userKicked|{0} was removed from the chat for posting media before they verified.
 
 #CAPTCHA 
 captcha/captcha|CAPTCHA

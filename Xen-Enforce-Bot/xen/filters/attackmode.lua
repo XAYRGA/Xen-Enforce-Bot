@@ -13,7 +13,6 @@ function FILTER:NewUser(user, chat, message, config, verifyData, doubt)
 	end
 	local msg = message:replySendMessage(Localization.getStringLocalized(config:getString("language"), "feature/attackMode/userKicked",user.first_name)) 
 	Cleanup.addMessage(msg)
-	Cleanup.addMessage(message)
 	Telegram.kickChatMember(chat,user,360)
 	return true
 end 
