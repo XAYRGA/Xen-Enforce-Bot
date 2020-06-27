@@ -20,7 +20,6 @@ info/github|http://github.com/XAYRGA/xenfbotdn
 
 #BASIC
 basic/error/noPermission|I don't have permission to perform %s, make sure you've given me permission to do this, or disable the feature %s
-basic/error/somethingWrong|Something went wrong performing %s, if this is troublesome, contact the developer.
 basic/welcome|Welcome to Xen Enforce bot! Please take a moment to read the instructions on the bot, or visit the github for more information
 basic/xenfbot|Xen Enforce Bot v{0} by http://github.com/XAYRGA/xenfbotdn\n\nRunning translation for `{1}` version [{3}] by {2} \n\nCurrent bot contact: {4}.
 basic/words/admin|Administrator
@@ -37,10 +36,15 @@ config/featureDisabled|Successfully disabled the feature '{0}'.
 config/featureEnabled|Successfully enabled the feature '{0}'.
 config/featureNotExist|The feature '{0}' doesn't exist.
 config/languageNotSupported|Sorry, I don't support the language '{0}' yet.
+config/kicktimeChanged|Successfully changed the verification time to {0} minutes.
 
 #FEATURES 
 feature/attackOn|Attack mode ENABLED. No new members will be accepted. 
 feature/attackOff|Attack mode DISABLED. New joins will no longer be kicked. 
+feature/attackMode/userKicked|{0} was removed from the chat -- attack mode is enabled, no new joins are accepted. 
+
+feature/kickNoIcons/userKicked|{0} was removed from the chat as they don't have any icons and 'kicknoicons' is turned on.
+feature/kickNoHandle/userKicked|{0} was removed from the chat as they don't have a handle/username and 'kicknohandle' is turned on.
 
 #CAPTCHA 
 captcha/captcha|CAPTCHA
@@ -53,9 +57,4 @@ captcha/userUnverified|%s has been unverified and must complete the CAPTCHA agai
 autorem/removedBecauseBot|%s was removed from the chat because they look like a bot. 
 autorem/sorry|Hey %s, sorry for kicking you. Your profile looks a lot like a bot, and I couldn't take any chances. You can try the following:\n1. Add a / additional profile icons\n2. Add an @handle to your profile if you don't have one.\n3. Lengthen your name.
 
-#MUTEUNTILVERIFIED 
-muvfilt/warning|You will not be able to send messages until you've verified. 
-movfilt/manual|%s has been manually unmuted by Xen Enforce Bot.
-
-furrymode/rem|%s was removed because their name is that of a common bot. 
 
