@@ -36,6 +36,7 @@ function FILTER:OnChatMessage(user, chat, message, config, verifyData, doubt)
 		if string.find(string.lower(message.text),string.lower(v)) then  
 			local msg = message:replySendMessage("Applied permanent ban for " .. user.id .. ", tripped filter 'PhraseBan' subindex " .. k .. " -- pushing into global blacklist.")
 			Cleanup.addMessage(msg)
+			Removals.addIncident(user,chat,"KICKSPAMPHRASE")
 			Telegram.kickChatMember(chat,user,0)
 			message:delete()
 			return true 

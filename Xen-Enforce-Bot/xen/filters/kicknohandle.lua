@@ -15,6 +15,7 @@ function FILTER:NewUser(user, chat, message, config, verifyData, doubt)
 		local msg = message:replySendMessage(Localization.getStringLocalized(config:getString("language"), "feature/kickNoHandle/userKicked",user.first_name)) 
 		Cleanup.addMessage(message)
 		Cleanup.addMessage(msg)
+		Removals.addIncident(user,chat,"KICKNOHANDLE")
 		Telegram.kickChatMember(chat,user,120)
 		return true
 	end

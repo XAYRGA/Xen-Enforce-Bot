@@ -3,6 +3,7 @@ COMMAND.RequireAdmin = true
 COMMAND.AllowedFeatures = {
 	["attackmode"] = true, 
 	["smartdetect"] = true,
+	["phraseban"] = true,
 	["kicknohandle"] = true,
 	["kicknoicons"] = true,
 	["kickblacklisted"] = true,

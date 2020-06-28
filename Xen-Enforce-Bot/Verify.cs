@@ -136,16 +136,7 @@ namespace XenfbotDN
 
             if (GCO.getBool("verifyannounce"))
             {
-                var name = thm.User.username;
-                if (name == null)
-                {
-                    name = thm.User.first_name;
-                    if (thm.User.last_name != null)
-                    {
-                        name += " " + thm.User.last_name;
-                    }
-                }
-                else { name = "@" + name; }
+                var name = Helpers.getMentionName(thm);
                 var sendMsg = Localization.getStringLocalized(GCO.getString("language"), "verify/userVerified", name);
                 var vermsg = GCO.getString("verifymessage");
 
@@ -184,19 +175,10 @@ namespace XenfbotDN
                 Telegram.deleteMessage(thc, jmid);
             }
             // Telegram.kickChatMember(thc, thu, 0);
-            Telegram.sendMessage(thc, "[!] DEVEL01 Kick averted -- compiled with flag DEBUG=true"); 
+            Telegram.sendMessage(thc, "welcome to kicked, nobody will ever know you existed."); 
             if (GCO.getBool("verifyannounce"))
             {
-                var name = thm.User.username;
-                if (name == null)
-                {
-                    name = thm.User.first_name;
-                    if (thm.User.last_name != null)
-                    {
-                        name += " " + thm.User.last_name;
-                    }
-                }
-                else { name = "@" + name; }
+                var name = Helpers.getMentionName(thm);
                 var sendMsg = Localization.getStringLocalized(GCO.getString("language"), "verify/userKicked", name);
                 var msg = Telegram.sendMessage(new TGChat() { id = groupID }, sendMsg);
                 Cleanup.addMessage(msg);
@@ -224,15 +206,7 @@ namespace XenfbotDN
             Telegram.kickChatMember(thc, thu, 120);
             if (GCO.getBool("verifyannounce"))
             {
-                var name = thm.User.username;
-                if (name == null)
-                {
-                    name = thm.User.first_name;
-                    if (thm.User.last_name != null)
-                    {
-                        name += " " + thm.User.last_name;
-                    }
-                } else { name = "@" + name; }
+                var name = Helpers.getMentionName(thm);
                 var sendMsg = Localization.getStringLocalized(GCO.getString("language"), "verify/userKickedDoubt", name);
                 var msg = Telegram.sendMessage(new TGChat() { id = groupID }, sendMsg);
                 Cleanup.addMessage(msg);

@@ -1,16 +1,5 @@
 ﻿COMMAND.name = "/xesetverifytime"
 COMMAND.RequireAdmin = true 
-COMMAND.AllowedFeatures = {
-	["attackmode"] = true, 
-	["smartdetect"] = true,
-	["phraseban"] = true,
-	["kicknohandle"] = true,
-	["kicknoicons"] = true,
-	["kickblacklisted"] = true,
-	["kickunverifiedmedia"] = true,
-	["verifyannounce"] = true,
-	["verifymute"] = true,
-}
 
 function COMMAND:Execute(gc,msg,VFD,doubt, args) 
 	if (not args[1]) then 

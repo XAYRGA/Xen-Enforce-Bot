@@ -17,6 +17,7 @@ function FILTER:NewUser(user, chat, message, config, verifyData, doubt)
 	end
 	if (icons < 1) then 
 		local msg = message:replySendMessage(Localization.getStringLocalized(config:getString("language"), "feature/kickNoIcons/userKicked",user.first_name)) 
+		Removals.addIncident(user,chat,"KICKNOICONS")
 		Cleanup.addMessage(message)
 		Cleanup.addMessage(msg)
 		Telegram.kickChatMember(chat,user,120)

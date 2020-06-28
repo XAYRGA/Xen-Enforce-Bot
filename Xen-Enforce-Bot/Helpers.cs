@@ -24,7 +24,36 @@ namespace XenfbotDN
             Console.WriteLine(msg, data);
         }
 
+        public static string getMentionName(TGUser usr)
+        {
+            var name = usr.username;
+            if (name == null)
+            {
+                name = usr.first_name;
+                if (usr.last_name != null)
+                {
+                    name += " " + usr.last_name;
+                }
+            }
+            else { name = "@" + name; }
 
+            return name;
+        }
+        public static string getMentionName(TGChatMember usr)
+        {
+            var name = usr.User.username;
+            if (name == null)
+            {
+                name = usr.User.first_name;
+                if (usr.User.last_name != null)
+                {
+                    name += " " + usr.User.last_name;
+                }
+            }
+            else { name = "@" + name; }
+
+            return name;
+        }
         public static void quickFormat(ref string text, string what, string with)
         {
             text = text.Replace(what, with);
