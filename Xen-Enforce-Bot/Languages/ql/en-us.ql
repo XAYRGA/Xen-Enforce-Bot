@@ -46,16 +46,14 @@ feature/attackMode/userKicked|{0} was removed from the chat -- attack mode is en
 feature/kickNoIcons/userKicked|{0} was removed from the chat as they don't have any icons and 'kicknoicons' is turned on.
 feature/kickNoHandle/userKicked|{0} was removed from the chat as they don't have a handle/username and 'kicknohandle' is turned on.
 feature/kickEarlyMedia/userKicked|{0} was removed from the chat for posting media before they verified.
+captcha/userWelcome|Welcome {0}, to the chat!\n\nPlease take a moment to verify that you're not a bot by completing a quick CAPTCHA\n\nYou have {1} minutes to verify, or else you'll be kicked from the chat.\n\nYou can verify here {2}
 
 #CAPTCHA 
-captcha/captcha|CAPTCHA
-captcha/userRemovedMessage|%s was removed from the chat because they didn't complete the captcha in %s minutes. 
-captcha/userVerified|%s was verified to not be a spambot.
-captcha/userWelcome|Welcome %s to the chat!\nPlease take a moment to verify that you're not a bot by completing a quick CAPTCHA\nYou have %s minutes to verify, or else you'll be kicked from the chat. 
-captcha/userUnverified|%s has been unverified and must complete the CAPTCHA again. 
+
 
 #AUTOREM 
-autorem/removedBecauseBot|%s was removed from the chat because they look like a bot. 
+autorem/removedBecauseBot|{0} was removed from the chat because they look like a bot. 
 autorem/sorry|Hey %s, sorry for kicking you. Your profile looks a lot like a bot, and I couldn't take any chances. You can try the following:\n1. Add a / additional profile icons\n2. Add an @handle to your profile if you don't have one.\n3. Lengthen your name.
+
 
 

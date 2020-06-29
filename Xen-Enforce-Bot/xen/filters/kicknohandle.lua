@@ -8,7 +8,6 @@ FILTER.Priority = 1000
 
 function FILTER:NewUser(user, chat, message, config, verifyData, doubt)
 	if (config:getBool("kicknohandle")==false) then -- don't continue if the filter is disabled for this chat
-		--print("Filter not enabled???")
 		return false 
 	end
 	if (user.username==nil) then 

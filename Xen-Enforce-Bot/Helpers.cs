@@ -54,9 +54,9 @@ namespace XenfbotDN
 
             return name;
         }
-        public static void quickFormat(ref string text, string what, string with)
+        public static string quickFormat(ref string text, string what, string with)
         {
-            text = text.Replace(what, with);
+            return text.Replace(what, with);
         }
 
 

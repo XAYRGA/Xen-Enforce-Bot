@@ -19,7 +19,7 @@ local function tripFilter(user, chat, message, config, verifyData, doubt)
 	Cleanup.addMessage(msg)
 	Removals.addIncident(user,chat,"KICKURLUNACTIVATED")
 	message:delete() 
-	--Telegram.kickChatMember(chat,user,500)
+	Telegram.kickChatMember(chat,user,500)
 end
 
 function FILTER:OnRawMessage(user, chat, message, config, verifyData, doubt)
