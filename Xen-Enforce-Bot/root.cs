@@ -66,9 +66,7 @@ namespace XenfbotDN
                 var tries = 0;
                 while (ok == null)
                 {
-
                     tries++;
-                    Thread.Sleep(1200);
                     ok = SQL.Query("SHOW FUNCTION STATUS");
                     if (tries > 3)
                     {
@@ -76,6 +74,7 @@ namespace XenfbotDN
                         Console.WriteLine(SQL.getLastError());
                         Environment.Exit(-1);
                     }
+                    Thread.Sleep(1200);
                 }
             }
             Console.WriteLine("OK!");
