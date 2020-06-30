@@ -16,12 +16,12 @@ verify/userKicked|{0} was removed from the chat because they failed to verify.
 verify/userKickedDoubt| {0} was removed from the chat -- if they're not a bot, they can rejoin in two minutes. 
 
 #INFO 
-info/github|http://github.com/XAYRGA/xenfbotdn
+info/github|https://github.com/XAYRGA/Xen-Enforce-Bot/tree/Bone-Hurting-Juice
 
 #BASIC
 basic/error/noPermission|I don't have permission to perform %s, make sure you've given me permission to do this, or disable the feature %s
 basic/welcome|Welcome to Xen Enforce bot! Please take a moment to read the instructions on the bot, or visit the github for more information
-basic/xenfbot|Xen Enforce Bot v{0} by http://github.com/XAYRGA/xenfbotdn\n\nRunning translation for `{1}` version [{3}] by {2} \n\nCurrent bot contact: {4}.
+basic/xenfbot|Xen Enforce Bot v{0} by https://github.com/XAYRGA/Xen-Enforce-Bot/tree/Bone-Hurting-Juice\n\nRunning translation for `{1}` version [{3}] by {2} \n\nCurrent bot contact: {4}.
 basic/words/admin|Administrator
 basic/words/manual|Manual
 basic/commands/noPermission|Sorry, you don't have permission to perform that action. 

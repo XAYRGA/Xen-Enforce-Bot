@@ -174,8 +174,8 @@ namespace XenfbotDN
             {
                 Telegram.deleteMessage(thc, jmid);
             }
-            // Telegram.kickChatMember(thc, thu, 0);
-            Telegram.sendMessage(thc, "welcome to kicked, nobody will ever know you existed."); 
+            Telegram.kickChatMember(thc, thu, 0);
+            //Telegram.sendMessage(thc, "welcome to kicked, nobody will ever know you existed."); 
             if (GCO.getBool("verifyannounce"))
             {
                 var name = Helpers.getMentionName(thm);

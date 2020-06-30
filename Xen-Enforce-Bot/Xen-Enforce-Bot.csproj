@@ -14,10 +14,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Languages\ql\de-de.ql">
+    <None Update="languages\ql\de-de.ql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Languages\ql\en-us.ql">
+    <None Update="languages\ql\en-us.ql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="xen\commands.lua">
@@ -50,7 +50,7 @@
     <None Update="xen\commands\test.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="xen\filterSystem.lua">
+    <None Update="xen\filtersystem.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="xen\filters\kicknohandle.lua">

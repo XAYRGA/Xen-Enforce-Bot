@@ -71,7 +71,10 @@ namespace XenfbotDN
 
         public static void processIndividualUpdate(TGUpdate update)
         {
+            
             var msg = update.message;
+            if (msg.from.is_bot == true) // Don't process updates from other bots
+                return;
             var langcode = "en"; // default language is englsh
             var gc = GroupConfiguration.getConfig(update.message.chat.id);
             var VFD = Verify.getVerifyData(update.message.from, update.message.chat, update.message);
@@ -82,6 +85,7 @@ namespace XenfbotDN
                 var ncm = msg.new_chat_members;
                 for (int i = 0; i < ncm.Length; i++)
                 {
+
                     if (ncm[i].username == root.botUsername)
                     {
                         var cl1 = Localization.getLanguageInfo(langcode);
@@ -92,7 +96,10 @@ namespace XenfbotDN
 
                         msg.replySendMessage(smsg);
                     }
-                    root.callHook.Call("NewChatMember", gc, msg, VFD, doubt);
+                    if (!ncm[i].is_bot)
+                    {
+                        root.callHook.Call("NewChatMember", gc, msg, VFD, doubt);
+                    }
                 }
             }
 
