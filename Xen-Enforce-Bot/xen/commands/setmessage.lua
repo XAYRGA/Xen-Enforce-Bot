@@ -1,4 +1,4 @@
-﻿COMMAND.name = "/xsetmessage"
+﻿COMMAND.name = "/xesetmessage"
 COMMAND.RequireAdmin = true 
 
 function COMMAND:Execute(gc,msg,VFD,doubt, args) 
