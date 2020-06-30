@@ -35,13 +35,13 @@ FilterSys.Entries[7] = FILTER
 
 function FilterSys.NewMember(gc, msg, VFD, doubt)  
 	for pos,flt in pairs(FilterSys.Entries) do   
-		local ok,error,res = pcall(flt.NewUser,flt,msg.from,msg.chat,msg,gc,VFD,doubt) 
-		--print(ok,error)
+		local ok,res = pcall(flt.NewUser,flt,msg.from,msg.chat,msg,gc,VFD,doubt) 
+		print(ok,res)
 		if (res==true) then 
 			return
 		end 
 		if (ok==false) then 
-			msg:replySendMessage("An exception has occured executing this filter:\n\nPrimary Stack header: " .. tostring(error) .. "\n\n" .. debug.traceback() .. "\n\nSecondary State Stack:\n------XEN-ENFORCE-BOT\n" .. Helpers.getStack() .. "\n\nThis is not supposed to happen, nor are you supposed to see this message if the bot is running in production mode. Please contact the bot's administrator!")
+			msg:replySendMessage("An exception has occured executing this filter:\n\nPrimary Stack header: " .. tostring(res) .. "\n\n" .. debug.traceback() .. "\n\nSecondary State Stack:\n------XEN-ENFORCE-BOT\n" .. Helpers.getStack() .. "\n\nThis is not supposed to happen, nor are you supposed to see this message if the bot is running in production mode. Please contact the bot's administrator!")
 			return
 		end
 	end 

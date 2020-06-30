@@ -4,6 +4,7 @@ using System.Text;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
 using System.Threading;
+using System.Text.RegularExpressions;
 
 namespace XenfbotDN
 {
@@ -21,6 +22,8 @@ namespace XenfbotDN
         }
 
         static long lastUpdate = 0;
+        static Dictionary<long, bool> groupError = new Dictionary<long, bool>();
+
         public static void processUpdates()
         {
             var up = Telegram.getUpdates(lastUpdate);
@@ -47,7 +50,20 @@ namespace XenfbotDN
                 {
                     if (currentUpdate.message != null)
                     {
-                        processIndividualUpdate(currentUpdate);
+                        try
+                        {
+                            processIndividualUpdate(currentUpdate);
+                        } catch (Exception E)
+                        {
+                            bool error = false;
+                            groupError.TryGetValue(currentUpdate.message.chat.id, out error);
+                            if (!error)
+                            {
+                                currentUpdate.message.replySendMessage("A serious exception has occured:\n\nException bleeding into root, there's blood everywhere.\n\nLua State Stack: UNAVAILABLE.\n\nC# State Stack:\n------XEN-ENFORCE-BOT\n" + E.ToString() + "\n\nThis is not supposed to happen, nor are you supposed to see this message if the bot is running in production mode. Please contact the bot's administrator!");
+                                currentUpdate.message.replySendMessage("Due to this error condition, it is possible that Xenfbot may stop working for this chat until it is restarted.");
+                                groupError[currentUpdate.message.chat.id] = true; 
+                            }
+                        }
                     }
                 }
             }

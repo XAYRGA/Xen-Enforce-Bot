@@ -18,9 +18,13 @@ function FILTER:NewUser(user, chat, message, config, verifyData, doubt)
 	local text = Localization.getStringLocalized(config:getString("language"), "captcha/userWelcome",UserName,delay,actURL)
 	if (CustomText~=nil) then 
 		if #CustomText > 10 then 
+			print("A")
 			CustomText = Helpers.quickFormat(CustomText,"%NAME",UserName)
+			print("B")
 			CustomText = Helpers.quickFormat(CustomText,"%ACTURL",actURL)
-			CustomText = Helpers.quickFormat(CustomText,"%DURATION",delay)
+			print("C")
+			CustomText = Helpers.quickFormat(CustomText,"%DURATION",tostring(delay))
+			print("D")
 			text = CustomText
 		end 
 	end

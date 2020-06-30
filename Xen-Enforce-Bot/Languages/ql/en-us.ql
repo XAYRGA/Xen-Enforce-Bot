@@ -37,6 +37,8 @@ config/featureEnabled|Successfully enabled the feature '{0}'.
 config/featureNotExist|The feature '{0}' doesn't exist.
 config/languageNotSupported|Sorry, I don't support the language '{0}' yet.
 config/kicktimeChanged|Successfully changed the verification time to {0} minutes.
+config/messageHelp|The attribute %ACTURL must appear in this message. You can also have %NAME and %DURATION.
+config/messageSet|The join message has been successfully changed.
 
 #FEATURES 
 feature/attackOn|Attack mode ENABLED. No new members will be accepted. 
