@@ -30,13 +30,13 @@ verifymute | Mutes a user until they complete verification.
 
 Some other configuration commands:
 
-/xsetmessage <message> | Will set the message displayed upon join, must contain %ACTURL. 
+/xesetmessage <message> | Will set the message displayed upon join, must contain %ACTURL. 
 
-/xverifytime <time> | sets the time a user has to verify in minutes 
+/xesetverifytime <time> | sets the time a user has to verify in minutes 
 
-/xattackenable | Enables attack mode, kicks all new joins with no prompt, will delete / cleanup all join messages from new joins. 
+/xeattackenable | Enables attack mode, kicks all new joins with no prompt, will delete / cleanup all join messages from new joins. 
 
-/xattackdisable | Disables attack mode, accepts new joins. 
+/xeattackdisable | Disables attack mode, accepts new joins. 
 
-/xsetlanguage <language code> | A language code is for example en, de, es, ru. Currently, only supporting english, but there's room for other translations. 
+/xesetlang <language code> | A language code is for example en, de, es, ru. Currently, only supporting english, but there's room for other translations. 
 
