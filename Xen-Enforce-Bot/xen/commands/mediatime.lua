@@ -1,4 +1,4 @@
-﻿COMMAND.name = "/xesetverifytime"
+﻿COMMAND.name = "/xesetmediatime"
 COMMAND.RequireAdmin = true 
 
 function COMMAND:Execute(gc,msg,VFD,doubt, args) 
@@ -12,7 +12,7 @@ function COMMAND:Execute(gc,msg,VFD,doubt, args)
 		msg:replySendMessage(Localization.getStringLocalized(gc:getString("language"), "config/dontUnderstandNumber",args[1])) 
 		return
 	end 
-	gc:modify("verifytime",num)
-	msg:replySendMessage(Localization.getStringLocalized(gc:getString("language"), "config/mediaTimeChanged",num)) 
+	gc:modify("mediadelaytime",num)
+	msg:replySendMessage(Localization.getStringLocalized(gc:getString("language"), "config/kicktimeChanged",num)) 
 	gc.invalidated = true
 end 

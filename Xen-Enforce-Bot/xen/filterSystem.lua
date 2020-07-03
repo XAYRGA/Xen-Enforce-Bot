@@ -27,9 +27,14 @@ FILTER = {}
 dofile("./xen/filters/verifymute.lua")
 FilterSys.Entries[6] = FILTER 
 
+
+FILTER = {} 
+dofile("./xen/filters/mediadelay.lua")
+FilterSys.Entries[7] = FILTER 
+
 FILTER = {} 
 dofile("./xen/filters/captcha.lua")
-FilterSys.Entries[7] = FILTER 
+FilterSys.Entries[8] = FILTER 
 
 --gc, msg, VFD, doubt
 

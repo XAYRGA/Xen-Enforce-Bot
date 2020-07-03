@@ -11,7 +11,7 @@ function COMMAND:Execute(gc,msg,VFD,doubt, args)
 		msg:replySendMessage(Localization.getStringLocalized(gc:getString("language"), "config/messageHelp",args[1])) 
 		return
 	end 
-	gc:modify("verifymessage",txmsg)
+	gc:modify("message",txmsg)
 	msg:replySendMessage(Localization.getStringLocalized(gc:getString("language"), "config/messageSet",args[1])) 
 	gc.invalidated = true
 end 

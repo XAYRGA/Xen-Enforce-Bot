@@ -90,6 +90,16 @@ namespace XenfbotDN
         public int height;
         public int file_size;
     }
+    public class TGVideo
+    {
+        public string file_id;
+        public string file_unique_id;
+    }
+    public class TGDocument
+    {
+        public string file_id;
+        public string file_unique_id;
+    }
 
     public class TGMessage
     {
@@ -107,6 +117,8 @@ namespace XenfbotDN
         public TGPhotoSize[] photo;
         public string text;
         public TGUser[] new_chat_members;
+        public TGVideo video;
+        public TGDocument document;
 
         public TGMessage replySendMessage(string text)
         {

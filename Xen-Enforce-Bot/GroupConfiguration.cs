@@ -12,7 +12,6 @@ namespace XenfbotDN
     public static class GroupConfiguration
     {
         private static Dictionary<long, GroupConfigurationObject> cache = new Dictionary<long, GroupConfigurationObject>();
-       
 
         public static GroupConfigurationObject queryObject(long group)
         {

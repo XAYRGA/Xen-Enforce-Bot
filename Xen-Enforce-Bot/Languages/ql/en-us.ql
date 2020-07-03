@@ -37,6 +37,7 @@ config/featureEnabled|Successfully enabled the feature '{0}'.
 config/featureNotExist|The feature '{0}' doesn't exist.
 config/languageNotSupported|Sorry, I don't support the language '{0}' yet.
 config/kicktimeChanged|Successfully changed the verification time to {0} minutes.
+config/mediaTimeChanged|Successfully changed the media delay to {0} hours.
 config/messageHelp|The attribute %ACTURL must appear in this message. You can also have %NAME and %DURATION.
 config/messageSet|The join message has been successfully changed.
 
@@ -48,6 +49,9 @@ feature/attackMode/userKicked|{0} was removed from the chat -- attack mode is en
 feature/kickNoIcons/userKicked|{0} was removed from the chat as they don't have any icons and 'kicknoicons' is turned on.
 feature/kickNoHandle/userKicked|{0} was removed from the chat as they don't have a handle/username and 'kicknohandle' is turned on.
 feature/kickEarlyMedia/userKicked|{0} was removed from the chat for posting media before they verified.
+feature/mediaDelay|{0}, you must wait {1} hours to post media after you've verified.
+feature/mediaDelayWarn|{0}, you must verify before you can post media. 
+
 captcha/userWelcome|Welcome {0}, to the chat!\n\nPlease take a moment to verify that you're not a bot by completing a quick CAPTCHA\n\nYou have {1} minutes to verify, or else you'll be kicked from the chat.\n\nYou can verify here {2}
 
 #CAPTCHA 

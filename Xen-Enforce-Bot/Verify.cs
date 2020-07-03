@@ -49,6 +49,13 @@ namespace XenfbotDN
                 return 0;
             return (int)(odata);
         }
+        public long getLong(string name)
+        {
+            var odata = getObject(name);
+            if (odata == null)
+                return 0;
+            return (long)(odata);
+        }
     }
     public static class Verify
     {

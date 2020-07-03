@@ -1,9 +1,11 @@
 FILTER.Author = "@xayrga"
+FILTER.Desc = "Xen Enforce Bot -- CAPTCHA Filter"
 FILTER.Version = 1.0
 FILTER.Name = "Captcha"
 FILTER.DefaultEnabled = false 
 FILTER.Requires = {}
 FILTER.Priority = 1000
+-- Captcha filter for Xen Enforce Bot 4 
 
 
 function FILTER:NewUser(user, chat, message, config, verifyData, doubt)
@@ -13,18 +15,14 @@ function FILTER:NewUser(user, chat, message, config, verifyData, doubt)
 	--print(challengeData)
 	local actURL = string.format(apiEndpoint,challengeData)
 	local delay = config:getInt("verifydelay") 
-	local CustomText = config:getString("verifymessage")
+	local CustomText = config:getString("message")
 	local UserName = Helpers.getMentionName(user)
 	local text = Localization.getStringLocalized(config:getString("language"), "captcha/userWelcome",UserName,delay,actURL)
 	if (CustomText~=nil) then 
 		if #CustomText > 10 then 
-			print("A")
 			CustomText = Helpers.quickFormat(CustomText,"%NAME",UserName)
-			print("B")
 			CustomText = Helpers.quickFormat(CustomText,"%ACTURL",actURL)
-			print("C")
 			CustomText = Helpers.quickFormat(CustomText,"%DURATION",tostring(delay))
-			print("D")
 			text = CustomText
 		end 
 	end
