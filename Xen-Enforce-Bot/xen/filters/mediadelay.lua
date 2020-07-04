@@ -35,7 +35,7 @@ function FILTER:OnRawMessage(user, chat, message, config, verifyData, doubt)
 
 	local vTime = verifyData:getLong("tverified"); 
 	local iTime =  config:getInt("mediadelaytime")
-	if ( (vTime + 60 * iTime ) < Helpers.getUnixTime() ) then
+	if ( (vTime + (60^2) * iTime ) < Helpers.getUnixTime() ) then
 		return false
 	end
 

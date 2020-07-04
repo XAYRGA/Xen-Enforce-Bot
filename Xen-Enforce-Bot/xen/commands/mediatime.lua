@@ -13,6 +13,6 @@ function COMMAND:Execute(gc,msg,VFD,doubt, args)
 		return
 	end 
 	gc:modify("mediadelaytime",num)
-	msg:replySendMessage(Localization.getStringLocalized(gc:getString("language"), "config/kicktimeChanged",num)) 
+	msg:replySendMessage(Localization.getStringLocalized(gc:getString("language"), "config/mediaTimeChanged",num)) 
 	gc.invalidated = true
 end 
