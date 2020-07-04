@@ -41,13 +41,13 @@ namespace XenfbotDN
         }
         public static string getMentionName(TGChatMember usr)
         {
-            var name = usr.User.username;
+            var name = usr.user.username;
             if (name == null)
             {
-                name = usr.User.first_name;
-                if (usr.User.last_name != null)
+                name = usr.user.first_name;
+                if (usr.user.last_name != null)
                 {
-                    name += " " + usr.User.last_name;
+                    name += " " + usr.user.last_name;
                 }
             }
             else { name = "@" + name; }

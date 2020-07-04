@@ -27,6 +27,7 @@ function FILTER:NewUser(user, chat, message, config, verifyData, doubt)
 		end 
 	end
 	local actMessage = Telegram.sendMessage(chat,text)
+	print(user, chat, actMessage,config,challengeData, delay ,message)
 	Verify.addInstance(user, chat, actMessage,config,challengeData, delay ,message)
 	return true
 end 

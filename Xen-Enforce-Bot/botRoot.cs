@@ -14,16 +14,22 @@ namespace XenfbotDN
         {
             while (true)
             {
-                processUpdates();
-                Thread.Sleep(200);
-                Verify.runTask();
-                Cleanup.runTask();
+                try
+                {
+                    processUpdates();
+                    Thread.Sleep(200);
+                    Verify.runTask();
+                    Cleanup.runTask();
+                } catch (Exception E)
+                {
+                    Helpers.writeStack(E.ToString());
+                }
             }
         }
 
         static long lastUpdate = 0;
         static Dictionary<long, bool> groupError = new Dictionary<long, bool>();
-
+        static bool allowProcessUpdates = false;
         public static void processUpdates()
         {
             var up = Telegram.getUpdates(lastUpdate);
@@ -33,6 +39,8 @@ namespace XenfbotDN
                 return;
             }
             Console.WriteLine("Updates: {0}", up.Length);
+            if (up.Length == 0)
+                allowProcessUpdates = true;
 
             for (int i = 0; i < up.Length; i++)
             {
@@ -45,26 +53,27 @@ namespace XenfbotDN
                 {
                     currentUpdate.message = currentUpdate.edited_message; // ahax.
                 }
-                Console.WriteLine(JsonConvert.SerializeObject(currentUpdate));
-           
+                if (allowProcessUpdates)
                 {
-                    if (currentUpdate.message != null)
+                    Console.WriteLine(JsonConvert.SerializeObject(currentUpdate));
+
                     {
-                        try
+                        if (currentUpdate.message != null)
                         {
-                            processIndividualUpdate(currentUpdate);
-                        } catch (Exception E)
-                        {
-                            bool error = false;
-                            groupError.TryGetValue(currentUpdate.message.chat.id, out error);
-                            if (!error)
+                            try
                             {
-                                currentUpdate.message.replySendMessage("A serious exception has occured:\n\nException bleeding into root, there's blood everywhere.\n\nLua State Stack: UNAVAILABLE.\n\nC# State Stack:\n------XEN-ENFORCE-BOT\n" + E.ToString() + "\n\nThis is not supposed to happen, nor are you supposed to see this message if the bot is running in production mode. Please contact the bot's administrator!");
-                                currentUpdate.message.replySendMessage("Due to this error condition, it is possible that Xenfbot may stop working for this chat until it is restarted.");
-                                groupError[currentUpdate.message.chat.id] = true; 
+                                processIndividualUpdate(currentUpdate);
+                            }
+                            catch (Exception E)
+                            {
+
+                                Helpers.writeStack(E.ToString());
                             }
                         }
                     }
+                } else
+                {
+                    Console.WriteLine("Skipping update due to startup condition....");
                 }
             }
         }

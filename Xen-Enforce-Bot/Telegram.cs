@@ -205,7 +205,7 @@ namespace XenfbotDN
             var b = new NameValueCollection();
             b["chat_id"] = chat.id.ToString();
             b["text"] = message;
-
+            Console.WriteLine($"Send message to {chat.id} | {message}");
             TGResponse resp = apiGetRequest("sendMessage", b);
 
             if (resp.ok == true)

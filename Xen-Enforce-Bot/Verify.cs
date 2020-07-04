@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Renci.SshNet.Messages;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
@@ -104,10 +105,22 @@ namespace XenfbotDN
 
         public static void addInstance(TGUser user, TGChat chat,TGMessage assoc_message, GroupConfigurationObject GCO,string challenge_data, int minutes, TGMessage joinM)
         {
-            int ra = 0;
-            int messageID = 0;
-            SQL.NonQuery($"DELETE FROM `verify` WHERE `user`={user.id} AND `group`={chat.id}", out ra);
-            SQL.NonQuery($"INSERT INTO `verify` (`user`,`group`,`challenge`,`tcreated`,`texpire`,`joinmessage`,`message`) VALUES({user.id},{chat.id},'{SQL.escape(challenge_data)}',{Helpers.getUnixTime()}, {Helpers.getUnixTime() + (minutes * 60)},{joinM.message_id},{assoc_message.message_id})", out ra);
+            try
+            {
+                int ra = 0;
+                long messageID = 0;
+                long joinMessageID = 0; 
+                if (assoc_message != null)
+                    messageID = assoc_message.message_id;
+
+                if (joinM != null)
+                    joinMessageID = joinM.message_id;
+                SQL.NonQuery($"DELETE FROM `verify` WHERE `user`={user.id} AND `group`={chat.id}", out ra);
+                SQL.NonQuery($"INSERT INTO `verify` (`user`,`group`,`challenge`,`tcreated`,`texpire`,`joinmessage`,`message`) VALUES({user.id},{chat.id},'{SQL.escape(challenge_data)}',{Helpers.getUnixTime()}, {Helpers.getUnixTime() + (minutes * 60)},{joinMessageID},{messageID})", out ra);
+            } catch (Exception E)
+            {
+                Console.WriteLine(E.ToString());
+            }
         }
 
         public static VerifyData getVerifyData(TGUser user, TGChat chat, TGMessage assoc_message)

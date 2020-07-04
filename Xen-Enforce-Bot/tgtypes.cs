@@ -59,7 +59,7 @@ namespace XenfbotDN
 
     public class TGChatMember
     {
-        public TGUser User;
+        public TGUser user;
         public string status;
         public int until_date;
         public bool can_be_edited;
