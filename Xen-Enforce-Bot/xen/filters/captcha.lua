@@ -15,7 +15,7 @@ function FILTER:NewUser(user, chat, message, config, verifyData, doubt)
 	--print(challengeData)
 	local actURL = string.format(apiEndpoint,challengeData)
 	local delay = config:getInt("verifydelay") 
-	local CustomText = config:getString("message")
+	local CustomText = config:getString("verifyask")
 	local UserName = Helpers.getMentionName(user)
 	local text = Localization.getStringLocalized(config:getString("language"), "captcha/userWelcome",UserName,delay,actURL)
 	if (CustomText~=nil) then 
