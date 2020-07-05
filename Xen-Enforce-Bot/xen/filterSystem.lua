@@ -38,9 +38,9 @@ FilterSys.Entries[8] = FILTER
 
 --gc, msg, VFD, doubt
 
-function FilterSys.NewMember(gc, msg, VFD, doubt)  
+function FilterSys.NewMember(gc, msg, VFD, doubt,newuser)  
 	for pos,flt in pairs(FilterSys.Entries) do   
-		local ok,res = pcall(flt.NewUser,flt,msg.from,msg.chat,msg,gc,VFD,doubt) 
+		local ok,res = pcall(flt.NewUser,flt,newuser,msg.chat,msg,gc,VFD,doubt,msg.from)
 		print(ok,res)
 		if (res==true) then 
 			return

@@ -107,7 +107,7 @@ namespace XenfbotDN
                     }
                     if (!ncm[i].is_bot)
                     {
-                        root.callHook.Call("NewChatMember", gc, msg, VFD, doubt);
+                        root.callHook.Call("NewChatMember", gc, msg, VFD, doubt,ncm[i]);
                     }
                 }
             }

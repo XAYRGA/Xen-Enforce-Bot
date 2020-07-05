@@ -16,7 +16,7 @@ end
 modhook.Add("verUserVerifiedNotify","FilterVerifyMute",FILTERCUSTOM_onUserVerified)
 
 
-function FILTER:NewUser(user, chat, message, config, verifyData, doubt)
+function FILTER:NewUser(user, chat, message, config, verifyData, doubt, from)
 	if (config:getBool("verifymute")==false) then -- don't continue if the filter is disabled for this chat
 		--print("Filter not enabled???")
 		return false 

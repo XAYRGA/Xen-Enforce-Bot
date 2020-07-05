@@ -6,7 +6,7 @@ FILTER.Requires = {}
 FILTER.Priority = 1000
 
 
-function FILTER:NewUser(user, chat, message, config, verifyData, doubt)
+function FILTER:NewUser(user, chat, message, config, verifyData, doubt, from)
 	if (config:getBool("attackmode")==false) then -- don't continue if the filter is disabled for this chat
 		--print("Filter not enabled???")
 		return false 

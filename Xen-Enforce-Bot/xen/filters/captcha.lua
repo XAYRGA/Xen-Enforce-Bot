@@ -8,7 +8,7 @@ FILTER.Priority = 1000
 -- Captcha filter for Xen Enforce Bot 4 
 
 
-function FILTER:NewUser(user, chat, message, config, verifyData, doubt)
+function FILTER:NewUser(user, chat, message, config, verifyData, doubt, from)
 	
 	local apiEndpoint = Config.getValue("APIEndpoint") -- NOTE: Capital config, gets the member from the C# state for config. 
 	local challengeData = Helpers.Base64Encode(user.id .. chat.id)
