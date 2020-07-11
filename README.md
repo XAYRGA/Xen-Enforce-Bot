@@ -1,14 +1,3 @@
-Hey-o!
-
-I'm testing a new core for Xen Enforce Bot, with hopefully, a lot of new features. 
-
-__THIS IS NOT AN UPDATE TO THE OFFICIAL @XENFBOT__  
-
-The official @xenfbot will remain the same until this version is deemed stable. 
-
-This is an update to the beta of xenfbot, which can be used at @xenfbetabot
-
-**Please note, that the beta of this bot may experience crashes, has the possibility to ban users from your chat with false-positives, and is out there for chats who want to help test new features for bot-stopping goodness. **
 
 By default, all features (except the CAPTCHA) come disabled. 
 
