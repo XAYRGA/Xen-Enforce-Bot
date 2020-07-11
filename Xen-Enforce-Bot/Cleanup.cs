@@ -8,7 +8,8 @@ namespace XenfbotDN
     public static class Cleanup
     {
         private static int delay = 30;
-        private static int last = 0; 
+        private static int last = 0;
+        private static string tag = "xenfbot@cleanuo";
         public static void runTask()
         {
             if (Helpers.getUnixTime() < last + delay)
@@ -36,6 +37,11 @@ namespace XenfbotDN
 
         public static void addMessage(TGMessage msg, int lifetime = 30)
         {
+            if (msg == null)
+            {
+                Helpers.writeOut(tag, "Cleanup.addMessage was NULL!!");
+                return;
+            }
             var qry = $"INSERT INTO `cleanup`(`group`,`mid`,`when`,`life`) VALUES({msg.chat.id},{msg.message_id},{Helpers.getUnixTime()},{lifetime})";
             int ra = 0;
             SQL.NonQuery(qry, out ra);

@@ -41,6 +41,10 @@ namespace XenfbotDN
         }
         public static string getMentionName(TGChatMember usr)
         {
+            if (usr==null)
+            {
+                return "null";
+            }
             var name = usr.user.username;
             if (name == null)
             {

@@ -39,9 +39,10 @@ function FILTER:OnRawMessage(user, chat, message, config, verifyData, doubt)
 		return false
 	end
 
-	if (message.photo~=nil or message.video~=nil or message.document~=nil) then 
+	if (message.photo~=nil or message.video~=nil or message.video_note~=nil or message.document~=nil) then 
 		local msg = message:replySendMessage(Localization.getStringLocalized(config:getString("language"), "feature/mediaDelay",pName,iTime)) 
 		Cleanup.addMessage(msg)
 		message:delete() 		
 	end
 end
+

@@ -95,6 +95,11 @@ namespace XenfbotDN
         public string file_id;
         public string file_unique_id;
     }
+    public class TGVideoNote
+    {
+        public string file_id;
+        public string file_unique_id;
+    }
     public class TGDocument
     {
         public string file_id;
@@ -119,6 +124,7 @@ namespace XenfbotDN
         public TGUser[] new_chat_members;
         public TGVideo video;
         public TGDocument document;
+        public TGVideoNote video_note;
 
         public TGMessage replySendMessage(string text)
         {
