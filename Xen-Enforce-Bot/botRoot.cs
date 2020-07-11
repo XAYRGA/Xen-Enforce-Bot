@@ -55,7 +55,7 @@ namespace XenfbotDN
                 }
                 if (allowProcessUpdates)
                 {
-                    Console.WriteLine(JsonConvert.SerializeObject(currentUpdate));
+                    //Console.WriteLine(JsonConvert.SerializeObject(currentUpdate));
 
                     {
                         if (currentUpdate.message != null)
