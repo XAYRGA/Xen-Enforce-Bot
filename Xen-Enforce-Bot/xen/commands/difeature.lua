@@ -15,7 +15,8 @@ COMMAND.AllowedFeatures = {
 
 function COMMAND:Execute(gc,msg,VFD,doubt, args) 
 	if (not args[1]) then 
-		msg:replySendMessage("!") 
+		-- basic/commands/badArgs
+		msg:replySendMessage(Localization.getStringLocalized(gc:getString("language"), "basic/commands/badArgs")) 
 		return 
 	end 
 	args[1] = string.lower(args[1])

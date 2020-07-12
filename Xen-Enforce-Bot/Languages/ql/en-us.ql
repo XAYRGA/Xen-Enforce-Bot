@@ -27,6 +27,7 @@ basic/words/manual|Manual
 basic/commands/noPermission|Sorry, you don't have permission to perform that action. 
 basic/commands/ok|Command completed successfully. 
 basic/commands/commandError|I ran into an error running this command, please report this with the following tag: {0}
+basic/commands/badArgs|Invalid arguments. Check the readme, commands usually have information that follows them, for example, "/xesetverifytime 60"
 
 #CONFIG
 config/success|Successfully changed {0} to {1}

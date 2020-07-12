@@ -27,6 +27,7 @@ basic/words/manual|Manual
 basic/commands/noPermission|Sowwy~ chu don't have pewmission uwu to pewfowm that action. 
 basic/commands/ok|Command compweted successfuwwy. 
 basic/commands/commandError|I wan into an ewwow wunnying dis command~ pwease wepowt dis wif teh fowwowing tag: {0}
+basic/commands/badArgs|Invalid arguments. Check the readme, commands usually have information that follows them, for example, "/xesetverifytime 60"
 
 #CONFIG
 config/success|Successfully changed {0} to {1}
