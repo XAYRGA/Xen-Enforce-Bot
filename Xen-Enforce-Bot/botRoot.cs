@@ -101,7 +101,7 @@ namespace XenfbotDN
                     {
                         var cl1 = Localization.getLanguageInfo(langcode);
                         var cl = Localization.getStringLocalized(langcode, "locale/currentLangName");
-                        var smsg = Localization.getStringLocalized(langcode, "basic/xenfbot", " BRN 'Bone-Hurting-Juice' 4.0.1 (Cheetah) ", cl, cl1.authors, cl1.version,"@xayrga");
+                        var smsg = Localization.getStringLocalized(langcode, "basic/xenfbot", " BRN 'MASTER' 4.0.8 (Noodle Dragon) ", cl, cl1.authors, cl1.version,"@xayrga");
                         smsg += "\n\n";
                         smsg += Localization.getStringLocalized(langcode, "basic/welcome");
 
