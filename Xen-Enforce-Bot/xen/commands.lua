@@ -17,7 +17,7 @@ local function OnMessage(gc,msg, VFD, doubt)
 
 	if mtext~=nil then 
 		mtext[1] = Helpers.quickFormat(mtext[1], "@" .. root.botUsername, "") -- strips bot username from bot commands
-		print(mtext[1])
+		--print(mtext[1])
 		local cmdLookup = Commands.CommandTable[mtext[1]]
 		table.remove(mtext,1)
 		if (cmdLookup~=nil) then 
