@@ -19,7 +19,6 @@ verify/userKickedDoubt| {0} a été supprimé du chat - s'il ne s'agit pas d'un 
 info/github|https://github.com/XAYRGA/Xen-Enforce-Bot/tree/Bone-Hurting-Juice
 
 #BASIC
-basic/error/noPermission|I don't have permission to perform %s, make sure you've given me permission to do this, or disable the feature %s
 basic/error/noPermission|Je n'ai pas l'autorisation d'effectuer %s, assurez-vous que vous m'avez donné l'autorisation de le faire ou désactivez la fonctionnalité %s
 basic/welcome|Bienvenue dans le bot Xen Enforce! Veuillez prendre un moment pour lire les instructions sur le bot, ou visitez le github pour plus d'informations
 basic/xenfbot|Xen Enforce Bot v{0} par https://github.com/XAYRGA/Xen-Enforce-Bot/tree/Bone-Hurting-Juice\n\nTraduction en cours pour `{1}` version [{3}] Par {2} \n\nContact bot actuel: {4}.
