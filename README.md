@@ -27,5 +27,5 @@ Some other configuration commands:
 
 `/xeattackdisable` | Disables attack mode, accepts new joins. 
 
-`/xesetlang <language code>` | A language code is for example `en`, `de`, `es`, `ru`. Currently, only supporting english, but there's room for other translations. 
+`/xesetlang <language code>` | A language code is for example `en`, `de`, `es`, `ru`, `fr`. Currently, only supporting english, but there's room for other translations. 
 
