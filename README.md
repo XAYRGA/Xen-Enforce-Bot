@@ -11,7 +11,7 @@ so an example would be `/xenablefilter kickunverifiedmedia`
 Here's a list of available filter names: 
 
 * `kickunverifiedmedia` | Will kick somebody if they post URL or media before the verification was completed 
-* `kickblacklised` | Will kick somebody automatically if they are on Xenfbot's global ban list (Currently, there are no entries on the global ban list. This list is reserved for spambots, and dangerous individuals only. STRONG consideration will be taken before adding anybody to this list. This feature is DISABLED by default. I will __NEVER__ kick people from your chat for something you did not explicitly enable.)
+* `kickblacklisted` | Will kick somebody automatically if they are on Xenfbot's global ban list (Currently, there are no entries on the global ban list. This list is reserved for spambots, and dangerous individuals only. STRONG consideration will be taken before adding anybody to this list. This feature is DISABLED by default. I will __NEVER__ kick people from your chat for something you did not explicitly enable.)
 * `kicknohandle` | Will kick somebody who joins without a handle 
 * `kicknoicons` | Will kick somebody who joins with no icons in their profile. 
 * `phraseban` | Xenfbot contains a list of common spam phrases bots will say. These phrases are very specific, and if it bans for it, it's likely that you copy-pasted botspam. Again, i'm not here to dictate your chats for you, just to stop bots. This feature is disabled by default, you must explicitly enable it. 
