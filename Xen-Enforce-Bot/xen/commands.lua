@@ -12,7 +12,7 @@ end
 
 
 local function OnMessage(gc,msg, VFD, doubt)
-	local mtext = string.explode(msg.text)
+	local mtext = string.explode(msg.text," ")
 	local lc 
 
 	if mtext~=nil then 

@@ -83,6 +83,7 @@ namespace XenfbotDN
             LuaState = new Lua();
             LuaState.LoadCLRPackage(); // Initialize CLR for lua state 
             LStateLibaries.File.Setup(LuaState);
+            LStateLibaries.LuaString.Setup(LuaState);
             LuaState.DoString("dofile('xen/preinit.lua')");
             LuaState.DoString("import('XenfbotDN','XenfbotDN')"); // Import xenfbot namespace
             LuaState.DoString("print(Telegram)");
