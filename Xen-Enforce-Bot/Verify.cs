@@ -1,4 +1,5 @@
-﻿using Renci.SshNet.Messages;
+﻿using Google.Protobuf.WellKnownTypes;
+using Renci.SshNet.Messages;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -133,6 +134,42 @@ namespace XenfbotDN
                 return null; 
             }
             return new VerifyData(dr0[0]);   
+        }
+
+        public static bool doTrustUser(TGUser user,TGChat chat)
+        {
+            int ra = 0;
+            SQL.NonQuery($"UPDATE `verify` SET `trusted`=TRUE WHERE `user`={user.id} AND `group`={chat.id}", out ra);
+            return ra > 0; 
+        }
+
+        public static void sendCustomVerificationMessage(TGUser user, TGChat chat, GroupConfigurationObject GCO,TGMessage msg)
+        {
+            var CustomText = GCO.getString("verifyask");
+            var delayDelay = GCO.getInt("verifydelay");
+            var apiEndpoint = Config.getValue("APIEndpoint"); //-- NOTE: Capital config, gets the member from the C# state for config. 
+            var challengeData = Helpers.Base64Encode(user.id.ToString() + chat.id.ToString());
+            var actURL = Helpers.quickFormat(ref apiEndpoint, "%s", challengeData);
+            var UserName = Helpers.getMentionName(user);
+            var regularLocalization = Localization.getStringLocalized(GCO.getString("language"), "captcha/userWelcome", UserName, delay, actURL);
+            
+            if (CustomText!=null)
+            {
+                if (CustomText.Length > 10)
+                {
+                    CustomText = Helpers.quickFormat(ref CustomText, "%NAME", UserName);
+                    CustomText = Helpers.quickFormat(ref CustomText, "%ACTURL", actURL);
+                    CustomText = Helpers.quickFormat(ref CustomText, "%DURATION", delayDelay.ToString());
+                    regularLocalization = CustomText;
+                }
+            }
+            var actMessage = Telegram.sendMessage(chat, regularLocalization);
+
+            //(user, chat, actMessage, config, challengeData, delay, message)
+
+            Verify.addInstance(user, chat, actMessage, GCO, challengeData, delayDelay, msg);
+
+
         }
 
         public static void doNotify(long user, long mid, long groupID, GroupConfigurationObject GCO, long jmid)
