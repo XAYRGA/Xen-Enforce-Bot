@@ -202,7 +202,7 @@ namespace XenfbotDN
                     sendMsg = vermsg;
                     sendMsg = sendMsg.Replace("%NAME", name);
                 }
-                var msg = Telegram.sendMessage(new TGChat() { id = groupID }, sendMsg);
+                var msg = Telegram.sendMessage(new TGChat() { id = groupID }, sendMsg,"HTML");
                 Cleanup.addMessage(msg);
             }
         }

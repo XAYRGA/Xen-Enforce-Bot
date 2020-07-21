@@ -104,6 +104,15 @@ namespace XenfbotDN
             return SQL.NonQuery(qry, out ra);
         }
 
+        public bool modify(string col, TGMessage msg,int start)
+        {
+            var data = msg.text.Substring(start);
+            invalidated = true;
+            var qry = $"UPDATE `configs` SET `{SQL.escape(col)}`='{SQL.escape(data)}' WHERE `groupid`={groupID}"; // spooky ' 
+            int ra = 0;
+            return SQL.NonQuery(qry, out ra);
+        }
+
         public bool modify(string col, int data)
         {
             invalidated = true;
