@@ -10,7 +10,8 @@ COMMAND.AllowedFeatures = {
 	["kickunverifiedmedia"] = true,
 	["verifyannounce"] = true,
 	["verifymute"] = true,
-	["mediadelay"] = true
+	["mediadelay"] = true,
+	["dontdeletejoinmessage"] = true
 }
 
 function COMMAND:Execute(gc,msg,VFD,doubt, args) 
