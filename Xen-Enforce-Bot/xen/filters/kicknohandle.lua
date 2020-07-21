@@ -11,7 +11,8 @@ function FILTER:NewUser(user, chat, message, config, verifyData, doubt)
 		return false 
 	end
 	if (user.username==nil) then 
-		local msg = message:replySendMessage(Localization.getStringLocalized(config:getString("language"), "feature/kickNoHandle/userKicked",user.first_name)) 
+		--local msg = message:replySendMessage(Localization.getStringLocalized(config:getString("language"), "feature/kickNoHandle/userKicked",user.first_name)) 
+		local msg = message:replyLocalizedMessage(gc:getString("language"),"feature/kickNoHandle/userKicked",user.first_name)
 		Cleanup.addMessage(message)
 		Cleanup.addMessage(msg)
 		Removals.addIncident(user,chat,"KICKNOHANDLE")

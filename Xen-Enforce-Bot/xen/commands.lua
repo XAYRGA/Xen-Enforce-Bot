@@ -31,7 +31,8 @@ local function OnMessage(gc,msg, VFD, doubt)
 					end
 
 				else 
-					msg:replySendMessage(Localization.getStringLocalized(gc:getString("language"), "basic/commands/noPermission"))
+					--msg:replySendMessage(Localization.getStringLocalized(gc:getString("language"), "basic/commands/noPermission"))
+					msg:replyLocalizedMessage(gc:getString("language"),"basic/commands/noPermission")
 				end
 			end 
 		end 

@@ -27,7 +27,9 @@ function FILTER:OnRawMessage(user, chat, message, config, verifyData, doubt)
 	local pName = Helpers.getMentionName(user)
 
 	if (verifyData:getBool("verified")==false) then 
-			local msg = message:replySendMessage(Localization.getStringLocalized(config:getString("language"), "feature/mediaDelayWarn",pName)) 
+			--local msg = message:replySendMessage(Localization.getStringLocalized(config:getString("language"), "feature/mediaDelayWarn",pName)) 
+			--
+			local msg = message:replyLocalizedMessage(config:getString("language"),"feature/mediaDelayWarn",pName)
 			Cleanup.addMessage(msg)
 			message:delete() 
 		return false 
@@ -40,7 +42,8 @@ function FILTER:OnRawMessage(user, chat, message, config, verifyData, doubt)
 	end
 
 	if (message.photo~=nil or message.video~=nil or message.video_note~=nil or message.document~=nil) then 
-		local msg = message:replySendMessage(Localization.getStringLocalized(config:getString("language"), "feature/mediaDelay",pName,iTime)) 
+		--local msg = message:replySendMessage(Localization.getStringLocalized(config:getString("language"), "feature/mediaDelay",pName,iTime)) 
+		local msg = message:replyLocalizedMessage(config:getString("language"),"feature/mediaDelay",pName,iTime)
 		Cleanup.addMessage(msg)
 		message:delete() 		
 	end

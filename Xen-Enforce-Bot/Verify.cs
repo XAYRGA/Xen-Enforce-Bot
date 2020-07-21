@@ -143,7 +143,7 @@ namespace XenfbotDN
             return ra > 0; 
         }
 
-        public static void sendVerificationMessage(TGUser user, TGChat chat, GroupConfigurationObject GCO,TGMessage msg)
+        public static void doCaptcha(TGUser user, TGChat chat, GroupConfigurationObject GCO,TGMessage msg)
         {
             var CustomText = GCO.getString("verifyask");
             var delayDelay = GCO.getInt("verifydelay");

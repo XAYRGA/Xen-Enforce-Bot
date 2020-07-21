@@ -15,7 +15,8 @@ end
 
 local function tripFilter(user, chat, message, config, verifyData, doubt)
 
-	local msg = message:replySendMessage(Localization.getStringLocalized(config:getString("language"), "feature/kickEarlyMedia/userKicked",user.first_name)) 
+	--local msg = message:replySendMessage(Localization.getStringLocalized(config:getString("language"), "feature/kickEarlyMedia/userKicked",user.first_name)) 
+	local msg = message:replyLocalizedMessage(gc:getString("language"),"feature/kickEarlyMedia/userKicked",user.first_name)
 	Cleanup.addMessage(msg)
 	Removals.addIncident(user,chat,"KICKURLUNACTIVATED")
 	message:delete() 
