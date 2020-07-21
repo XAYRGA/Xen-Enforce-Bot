@@ -163,7 +163,12 @@ namespace XenfbotDN
                     regularLocalization = CustomText;
                 }
             }
-            var actMessage = Telegram.sendMessage(chat, regularLocalization);
+            var actMessage = Telegram.sendMessage(chat, regularLocalization,"HTML");
+            if (actMessage==null)
+            {
+                Console.WriteLine("Parse error sending message. Re-sending without parsemode");
+                actMessage = Telegram.sendMessage(chat, regularLocalization);
+            }
 
             //(user, chat, actMessage, config, challengeData, delay, message)
 

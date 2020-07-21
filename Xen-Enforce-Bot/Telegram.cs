@@ -269,7 +269,7 @@ namespace XenfbotDN
             b["chat_id"] = chat.id.ToString();
             b["text"] = message;
             b["parse_mode"] = parse_mode.ToString();
-
+            Console.WriteLine($"Send message to {chat.id} | {message}");
             TGResponse resp = apiGetRequest("sendMessage", b);
             var rede = resp.result.CreateReader();
             if (resp.ok == true)
