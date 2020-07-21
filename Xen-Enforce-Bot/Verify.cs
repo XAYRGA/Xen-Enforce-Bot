@@ -143,7 +143,7 @@ namespace XenfbotDN
             return ra > 0; 
         }
 
-        public static void sendCustomVerificationMessage(TGUser user, TGChat chat, GroupConfigurationObject GCO,TGMessage msg)
+        public static void sendVerificationMessage(TGUser user, TGChat chat, GroupConfigurationObject GCO,TGMessage msg)
         {
             var CustomText = GCO.getString("verifyask");
             var delayDelay = GCO.getInt("verifydelay");
@@ -179,12 +179,12 @@ namespace XenfbotDN
             var thc = new TGChat() { id = groupID };
             var thu = new TGUser() { id = user };
             var thm = Telegram.getChatMember(thc, thu);
-
-            if (mid!=0)
+            var deleteJMID = GCO.getBool("dontdeletejoinmessage");
+            if (mid!=0 )
             {
                 Telegram.deleteMessage(thc, mid);
             }
-            if (jmid!=0)
+            if (jmid!=0 && deleteJMID == false)
             {
                 Telegram.deleteMessage(thc, jmid);
             }

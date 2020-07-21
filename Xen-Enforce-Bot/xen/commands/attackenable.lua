@@ -3,6 +3,7 @@ COMMAND.RequireAdmin = true
 
 function COMMAND:Execute(gc,msg,VFD,doubt) 
 	gc:modify("attackmode",true)
-	msg:replySendMessage(Localization.getStringLocalized(gc:getString("language"), "feature/attackOn")) 
+	--msg:replySendMessage(Localization.getStringLocalized(gc:getString("language"), "feature/attackOn")) 
+	msg:replyLocalizedMessage(gc:getString("language"),"feature/attackOn")
 	gc.invalidated = true
 end 

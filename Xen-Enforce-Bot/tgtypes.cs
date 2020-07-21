@@ -153,6 +153,20 @@ namespace XenfbotDN
             }
         }
 
+        public TGMessage replyLocalizedMessage(string code, string locstring)
+        {
+            var message = Localization.getStringLocalized(code, locstring);
+            if (this.chat != null)
+            {
+                return Telegram.sendMessage(this.chat, message);
+            }
+            else
+            {
+                Helpers.warn("[!] Tried to reply to a message that has no chat.");
+                return null;
+            }
+        }
+
         public bool delete()
         {
             if (this.chat != null)

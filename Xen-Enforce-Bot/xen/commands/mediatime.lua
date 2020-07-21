@@ -3,7 +3,8 @@ COMMAND.RequireAdmin = true
 
 function COMMAND:Execute(gc,msg,VFD,doubt, args) 
 	if (not args[1]) then 
-		msg:replySendMessage(Localization.getStringLocalized(gc:getString("language"), "basic/commands/badArgs")) 
+		--msg:replySendMessage(Localization.getStringLocalized(gc:getString("language"), "basic/commands/badArgs")) 
+		msg:replyLocalizedMessage(gc:getString("language"),"basic/commands/badArgs")
 		return 
 	end 
 	local num = tonumber(args[1])
