@@ -53,7 +53,7 @@ feature/kickEarlyMedia/userKicked|{0} a été supprimé du chat pour avoir publi
 feature/mediaDelay|{0}, Après la validation du captcha, vous devez attendre {1} heures avant de publier des médias (vidéos ou images).
 feature/mediaDelayWarn|{0}, vous devez valider le captcha avant de pouvoir publier des supports.
 
-captcha/userWelcome|Bienvenue {0},!\n\nS’il vous plaît, veuillez prendre un moment afin de vérifier que vous n’êtes pas un bot en complétant rapidement le CAPTCHA suivant\n\nLien de validation: {2}\n\nVous avez {1} minutes pour valider ce captcha, Vous serez automatiquement expulsé si vous ne le valider pas dans le temps imparti.
+captcha/userWelcome|Bienvenue {0}!\n\nS’il vous plaît, veuillez prendre un moment afin de vérifier que vous n’êtes pas un bot en complétant rapidement le CAPTCHA suivant\n\nLien de validation: {2}\n\nVous avez {1} minutes pour valider ce captcha, Vous serez automatiquement expulsé si vous ne le valider pas dans le temps imparti.
 
 #CAPTCHA 
 
