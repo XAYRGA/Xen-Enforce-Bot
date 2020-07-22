@@ -14,7 +14,7 @@ function COMMAND:Execute(gc,msg,VFD,doubt, args)
 		msg:replyLocalizedMessage(gc:getString("language"),"config/dontUnderstandNumber",args[1])
 		return
 	end 
-	gc:modify("verifytime",num)
+	gc:modify("verifydelay",num)
 	--msg:replySendMessage(Localization.getStringLocalized(gc:getString("language"), "config/kicktimeChanged",num)) 
 	msg:replyLocalizedMessage(gc:getString("language"),"config/kicktimeChanged",args[1])
 	gc.invalidated = true

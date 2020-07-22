@@ -151,7 +151,7 @@ namespace XenfbotDN
             var challengeData = Helpers.Base64Encode(user.id.ToString() + chat.id.ToString());
             var actURL = Helpers.quickFormat(ref apiEndpoint, "%s", challengeData);
             var UserName = Helpers.getMentionName(user);
-            var regularLocalization = Localization.getStringLocalized(GCO.getString("language"), "captcha/userWelcome", UserName, delay, actURL);
+            var regularLocalization = Localization.getStringLocalized(GCO.getString("language"), "captcha/userWelcome", UserName, delayDelay, actURL);
             
             if (CustomText!=null)
             {
