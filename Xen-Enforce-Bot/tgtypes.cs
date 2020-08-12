@@ -114,6 +114,7 @@ namespace XenfbotDN
         public TGChat chat;
         public TGUser forward_from;
         public TGChat forward_from_chat;
+        public TGMessage reply_to_message;
         public int forward_from_message_id;
         public string forward_signature;
         public string forward_sender_name;

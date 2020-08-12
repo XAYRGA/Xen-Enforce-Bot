@@ -106,6 +106,7 @@ namespace XenfbotDN
 
         public static void addInstance(TGUser user, TGChat chat,TGMessage assoc_message, GroupConfigurationObject GCO,string challenge_data, int minutes, TGMessage joinM)
         {
+            
             try
             {
                 int ra = 0;
@@ -139,7 +140,8 @@ namespace XenfbotDN
         public static bool doTrustUser(TGUser user,TGChat chat)
         {
             int ra = 0;
-            SQL.NonQuery($"UPDATE `verify` SET `trusted`=TRUE WHERE `user`={user.id} AND `group`={chat.id}", out ra);
+            SQL.NonQuery($"UPDATE `verify` SET `trusted`=TRUE `tverified`={Helpers.getUnixTime()} WHERE `user`={user.id} AND `group`={chat.id}", out ra);
+            
             return ra > 0; 
         }
 

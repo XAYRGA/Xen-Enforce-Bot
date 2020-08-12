@@ -17,12 +17,12 @@ namespace XenfbotDN
                 try
                 {
                     processUpdates();
-                    Thread.Sleep(200);
                     Verify.runTask();
                     Cleanup.runTask();
                 } catch (Exception E)
                 {
                     Helpers.writeStack(E.ToString());
+                    Thread.Sleep(500);
                 }
             }
         }

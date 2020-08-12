@@ -14,7 +14,7 @@ locale/sentence|The quick brown fox jumps over the lazy dog.
 verify/userVerified|{0} has successfully completed verification. 
 verify/userKicked|{0} was removed from the chat because they failed to verify.
 verify/userKickedDoubt| {0} was removed from the chat -- if they're not a bot, they can rejoin in two minutes. 
-
+verify/manualVerifyFail|You must reply to a message to use this function.
 #INFO 
 info/github|https://github.com/XAYRGA/Xen-Enforce-Bot/tree/Bone-Hurting-Juice
 
