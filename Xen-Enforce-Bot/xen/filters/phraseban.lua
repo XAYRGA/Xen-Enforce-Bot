@@ -19,8 +19,12 @@ local badPhrases = {
 	--02.2
 	[[A man who you think the world of saying he wants to take you to the finest restaurant in the state is something else]],
 	[[Then you know that doesn’t happen and you end up getting told by another furry you randomly found on ferzu]],
-	[[the reason I dumped contact with him when we were just friends was this little fucker would ignore my YouTube links]]
+	[[the reason I dumped contact with him when we were just friends was this little fucker would ignore my YouTube links]],
+	--02.3 
+	[[His name is Dylan Phillips from Michigan]],
+	[[a crazy psycho brother and lives with his mom]]
 	----03
+
 }
 
 
