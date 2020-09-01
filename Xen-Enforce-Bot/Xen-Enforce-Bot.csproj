@@ -17,7 +17,7 @@
     <None Update="languages\ql\de-de.ql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Languages\ql\fr-fr.ql">
+    <None Update="languages\ql\fr-fr.ql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="languages\ql\fu-rry.ql">
@@ -26,10 +26,10 @@
     <None Update="languages\ql\en-us.ql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Languages\ql\ru-ru.ql">
+    <None Update="languages\ql\ru-ru.ql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Languages\ql\uk-ua.ql">
+    <None Update="languages\ql\uk-ua.ql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="xen\commands.lua">
