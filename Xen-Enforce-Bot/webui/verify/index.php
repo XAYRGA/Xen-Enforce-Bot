@@ -1,6 +1,9 @@
 <?php 
 	define('USE_DATABASE',1);
 	include 'databank.php';
+	
+		$sitekey = "ADD SITEKEY HERE";
+	
 		if (isset($_GET['success'])) {
 			$success = $_GET['success'];
 		} else {
@@ -120,7 +123,7 @@ die();
 					
 					
 					<p class="w3-large w3-center">Please verify that you're human.</p>				
-					<div class="h-captcha" data-sitekey="996aa915-b2f6-4a44-8149-6fa5773f3955"></div>
+					<div class="h-captcha" data-sitekey="<?php echo $sitekey?>"</div>
 					  <input type="submit" class="w3-button w3-large w3-white" value="Verify me!">
 					<?php 
 						echo(' <input type="hidden" id="actid" name="actid" value="' . $actid . '"> ');

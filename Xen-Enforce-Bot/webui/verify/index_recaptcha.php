@@ -1,6 +1,9 @@
 <?php 
 	define('USE_DATABASE',1);
 	include 'databank.php';
+	
+	$sitekey = "RECAPTCHA SITEKEY HERE";
+	
 		if (isset($_GET['success'])) {
 			$success = $_GET['success'];
 		} else {
@@ -118,7 +121,7 @@ die();
 					
 					
 					<p class="w3-large w3-center">Please verify that you're human.</p>
-					<div class="g-recaptcha" data-sitekey="6LeviGwUAAAAAJId6O3eLIY7HBKxBKBI-qTJNJrZ"></div>
+					<div class="g-recaptcha" data-sitekey="<?php echo $sitekey?>"></div>
 			
 					  <input type="submit" class="w3-button w3-large w3-white" value="Verify me!">
 					<?php 

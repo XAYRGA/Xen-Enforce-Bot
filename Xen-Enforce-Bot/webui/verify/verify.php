@@ -1,7 +1,9 @@
 <?php 
 	define('USE_DATABASE',1);
 	include 'databank.php';
-	$secret = "";
+	
+	$secret = "ADD SECRET HERE";
+	
 	if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
 		$ip = $_SERVER['HTTP_CLIENT_IP'];
 	} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
