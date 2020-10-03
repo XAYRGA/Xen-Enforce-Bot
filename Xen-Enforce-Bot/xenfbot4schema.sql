@@ -13,8 +13,8 @@
 
 
 -- Dumping database structure for xenf_test
-CREATE DATABASE IF NOT EXISTS `xenf_test` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
-USE `xenf_test`;
+CREATE DATABASE IF NOT EXISTS `xenfbot` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+USE `xenfbot`;
 
 -- Dumping structure for table xenf_test.blacklist
 CREATE TABLE IF NOT EXISTS `blacklist` (

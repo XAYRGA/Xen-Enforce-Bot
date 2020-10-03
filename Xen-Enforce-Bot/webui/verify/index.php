@@ -131,7 +131,7 @@ die();
 						
 					?>
 					<br>
-					<a href="http://xenfbot.ga/verify/index_recaptcha.php?actid=<?php echo $actid?>">Use Google Recaptcha instead</a>
+					<a href="index_recaptcha.php?actid=<?php echo $actid?>">Use Google Recaptcha instead</a>
 				</form>
 			  </div>
 		</center>
